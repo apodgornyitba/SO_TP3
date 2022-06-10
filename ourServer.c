@@ -1,4 +1,4 @@
-#include <challenges.h>
+#include <lib.h>
 
 #define BACKLOG 10
 #define BUFFER_SIZE 100
@@ -6,14 +6,12 @@
 //https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/
 //https://www.geeksforgeeks.org/socket-programming-cc/
 
-void errorHandler(const char *errorMsg) {
-    perror(errorMsg);
-    exit(EXIT_FAILURE);
-}
+
 
 static void buildSocket(int * serverFd, int * optValue, int * clientFd, struct sockaddr_in * address, socklen_t addressLength) {
 
     if ((*serverFd = socket(AF_INET, SOCK_STREAM, 0)) == ERROR_CODE) {
+
         errorHandler("Error creating socket");
     }
     

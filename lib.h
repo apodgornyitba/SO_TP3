@@ -22,6 +22,12 @@
 #define MAX_LEVELS 12
 #define GENERIC_CHALLENGE NULL
 
+//ERROR HANDLER
+void errorHandler(const char *errorMsg) {
+    perror(errorMsg);
+    exit(EXIT_FAILURE);
+}
+
 typedef struct Challenge {
     char * hint;
     char * ans;

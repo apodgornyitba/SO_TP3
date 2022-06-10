@@ -1,4 +1,4 @@
-#include <challenges.h>
+#include <lib.h>
 
 void Challenge4() { //escribe en un archivo de texto su salida (la rta)
     if(write(13, "La respuesta es fk3wfLCm3QvS\n", 30) == ERROR_CODE)
