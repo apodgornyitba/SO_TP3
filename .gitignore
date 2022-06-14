@@ -1,2 +1,9 @@
 .bash_history
 .gdb_history
+challenges/*.png
+challenges/*.txt
+challenges/*.xlsx
+
+challenges.o
+client
+ourServer

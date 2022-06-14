@@ -2,15 +2,15 @@ GCC= gcc
 GCCFLAGS= -std=gnu99  -Wall -pedantic 
 GCCLIBS= -lm
 
-SOURCES_SERVER= src/newServer.c
-SOURCES_CLIENT= src/client.c
-SOURCES_CHALLENGES= src/challenges.c
-SOURCES_LIB= src/lib.c
+SOURCES_SERVER= ourServer.c
+SOURCES_CLIENT= client.c
+SOURCES_CHALLENGES= challenges.c
+SOURCES_LIB= lib.c
 
 OBJECT_CHALLENGES=$(SOURCES_CHALLENGES:.c=.o)
 OBJECTS_LIB=$(SOURCES_LIB:.c=.o)
 
-SERVER_EXEC= newServer
+SERVER_EXEC= ourServer
 CLIENT_EXEC= client
 
 all: $(OBJECT_CHALLENGES) client
@@ -19,14 +19,11 @@ all: $(OBJECT_CHALLENGES) client
 %.o: %.c
 		$(GCC) $(GCCFLAGS) -I./include -c $^ $(GCCLIBS)
 
-# newServer:
-
-# challenges:
 
 client:
 		$(GCC) -I./include $(SOURCES_CLIENT) $(SOURCES_LIB) -o $(CLIENT_EXEC) $(GCCFLAGS)
 
 clean:
-		rm -rf *.o newServer client ./src/*.o
+		rm -rf *.o ourServer client ./src/*.o
 
 .PHONY: all clean client

@@ -33,10 +33,10 @@ void Challenge10() {
     if(present == VALID) {
         printf("¡Genial!, ya lograron meter un programa en quine.c, veamos si hace lo que corresponde.\n");
 
-        int valid = system("./quine | diff - quine.c"); 
+        int valid = system("./quine | diff - quine.c");
 
-        if(valid == VALID)
-            printf("La respuesta es chin_chu_lan_cha\n\n");
+        if((valid >> 8) == 1)
+            printf("\n\nLa respuesta es chin_chu_lan_cha\n\n");
         else
             printf("\n%s\n", "diff encontró diferencias.");
 

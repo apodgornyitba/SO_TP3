@@ -1,8 +1,22 @@
 #include <lib.h>
 
-#define MAX_BUFFER 1024
-
 static int socketFd = 0;
+
+static char *answers[] = {
+    "entendido\n",
+    "itba\n",
+    "M4GFKZ289aku\n",
+    "fk3wfLCm3QvS\n",
+    "too_easy\n",
+    ".RUN_ME\n",
+    "K5n2UFfpFMUN\n",
+    "BUmyYq5XxXGt\n",
+    "u^v\n",
+    "chin_chu_lan_cha\n",
+    "gdb_rules\n",
+    "normal\n",
+    NULL
+};
 
 int main(int argc, const char *argv[]) {
 
